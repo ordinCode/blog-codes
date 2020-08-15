@@ -1,0 +1,20 @@
+{
+  "name": "pwa tutorial",
+  "short_name": "pwa tutorial",
+  "start_url": ".",
+  "display": "fullscreen",
+  "theme_color": "#FF9800",
+  "background_color": "#FF9800",
+  "icons": [
+    {
+      "src": "themiso-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "themiso-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

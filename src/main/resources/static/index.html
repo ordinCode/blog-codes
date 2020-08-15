@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta content="IE=edge" http-equiv=X-UA-Compatible>
+  <meta content="width=device-width,initial-scale=1" name=viewport>
+  <link href=/favicon.ico rel=icon>
+  <link href=./manifest.json rel=manifest>
+  <link href=./themiso-icon-192x192.png rel=icon sizes=192x192>
+  <link href=./themiso-icon-512x512.png rel=icon sizes=512x512>
+  <meta content=yes name=mobile-web-app-capable>
+  <title>none-pwa-project</title>
+  <link href=/js/about.15f2195c.js rel=prefetch>
+  <link as=style href=/css/app.aacd8ebb.css rel=preload>
+  <link as=script href=/js/app.5f508b49.js rel=preload>
+  <link as=script href=/js/chunk-vendors.f082a4ed.js rel=preload>
+  <link href=/css/app.aacd8ebb.css rel=stylesheet>
+</head>
+<body>
+<noscript><strong>We're sorry but none-pwa-project doesn't work properly without JavaScript enabled. Please enable it to
+  continue.</strong></noscript>
+<div id=app></div>
+<script>if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => {
+        console.log('Service worker registered! 😎', reg);
+      })
+      .catch(err => {
+        console.log('😥 Service worker registration failed: ', err);
+      });
+  });
+}</script>
+<script src=/js/chunk-vendors.f082a4ed.js></script>
+<script src=/js/app.5f508b49.js></script>
+</body>
+</html>
