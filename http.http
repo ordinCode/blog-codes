@@ -1,0 +1,28 @@
+GET http://localhost:8080/insert/embed
+
+###
+
+GET http://localhost:8080/insert/oneway
+
+###
+
+GET http://localhost:8080/insert/bothway
+
+###
+
+
+DELETE http://localhost:8080/delete/embed
+
+###
+
+DELETE http://localhost:8080/delete/oneway
+
+###
+
+DELETE http://localhost:8080/delete/bothway
+
+###
+
+DELETE http://localhost:8080/delete/bothway-fetch
+
+###

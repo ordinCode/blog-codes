@@ -9,5 +9,4 @@ class OrdincodeApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
