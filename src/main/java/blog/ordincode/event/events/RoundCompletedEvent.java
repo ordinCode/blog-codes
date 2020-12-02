@@ -2,11 +2,11 @@ package blog.ordincode.event.events;
 
 import blog.ordincode.domain.Car;
 
-public class RoundOverEvent {
+public class RoundCompletedEvent {
     private final Car first;
     private final int round;
 
-    public RoundOverEvent(Car player, int round) {
+    public RoundCompletedEvent(Car player, int round) {
         this.first = player;
         this.round = round;
     }

@@ -2,10 +2,10 @@ package blog.ordincode.event.events;
 
 import blog.ordincode.domain.Car;
 
-public class GameOverEvent {
+public class GameFinishedEvent {
     private final Car first;
 
-    public GameOverEvent(Car players) {
+    public GameFinishedEvent(Car players) {
         this.first = players;
     }
 

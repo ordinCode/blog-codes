@@ -1,18 +1,21 @@
 package blog.ordincode.event.handler;
 
-import blog.ordincode.event.events.GameOverEvent;
+import blog.ordincode.domain.Awards;
+import blog.ordincode.domain.BroadCaster;
+import blog.ordincode.event.events.GameFinishedEvent;
 
-public class GameOverHandler implements EventHandler<GameOverEvent> {
+public class GameOverHandler implements EventHandler<GameFinishedEvent> {
+    private final BroadCaster broadCaster = new BroadCaster();
+    private final Awards awards = new Awards();
 
     @Override
-    public void handle(GameOverEvent event) {
+    public void handle(GameFinishedEvent event) {
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(
-                String.format("최종 우승자는 %s 입니다", event.getFirst().getName())
-        );
+        broadCaster.broadcastGameResult(event.getFirst());
+        awards.givePrize(event.getFirst());
     }
 }

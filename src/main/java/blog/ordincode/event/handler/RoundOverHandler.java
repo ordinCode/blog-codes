@@ -1,17 +1,18 @@
 package blog.ordincode.event.handler;
 
-import blog.ordincode.event.events.RoundOverEvent;
+import blog.ordincode.domain.BroadCaster;
+import blog.ordincode.event.events.RoundCompletedEvent;
 
-public class RoundOverHandler implements EventHandler<RoundOverEvent> {
+public class RoundOverHandler implements EventHandler<RoundCompletedEvent> {
+    private final BroadCaster broadCaster = new BroadCaster();
+
     @Override
-    public void handle(RoundOverEvent event) {
+    public void handle(RoundCompletedEvent event) {
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(
-                String.format("%d라운드: %s 이/가 선두입니다", event.getRound(), event.getFirst().getName())
-        );
+        broadCaster.broadcastWhileRacing(event.getRound(), event.getFirst());
     }
 }

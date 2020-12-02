@@ -1,8 +1,8 @@
 package blog.ordincode.domain;
 
 import blog.ordincode.event.EventDispatcher;
-import blog.ordincode.event.events.GameOverEvent;
-import blog.ordincode.event.events.RoundOverEvent;
+import blog.ordincode.event.events.GameFinishedEvent;
+import blog.ordincode.event.events.RoundCompletedEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +14,15 @@ public class RacingGame {
         this.players = new ArrayList<>(players);
     }
 
-    public void doRun(int round) throws InterruptedException {
+    public void completeRound(int round) throws InterruptedException {
         Thread.sleep(1000);
         System.out.println(round + "라운드 진행완료");
-        EventDispatcher.raise(new RoundOverEvent(findFirst(), round));
+        EventDispatcher.raise(new RoundCompletedEvent(findFirst(), round));
     }
 
-    public void over() {
+    public void finish() {
         System.out.println("게임종료");
-        EventDispatcher.raise(new GameOverEvent(findFirst()));
+        EventDispatcher.raise(new GameFinishedEvent(findFirst()));
     }
 
     public Car findFirst() {

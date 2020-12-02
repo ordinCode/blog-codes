@@ -1,8 +1,8 @@
 package blog.ordincode.event.handler;
 
 import blog.ordincode.domain.Car;
-import blog.ordincode.event.events.GameOverEvent;
-import blog.ordincode.event.events.RoundOverEvent;
+import blog.ordincode.event.events.GameFinishedEvent;
+import blog.ordincode.event.events.RoundCompletedEvent;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,9 +15,9 @@ class RoundOverHandlerTest {
     void canHandleWhenTrue() {
         RoundOverHandler roundOverHandler = new RoundOverHandler();
 
-        RoundOverEvent roundOverEvent = new RoundOverEvent(Car.of("car1"), 1);
+        RoundCompletedEvent roundCompletedEvent = new RoundCompletedEvent(Car.of("car1"), 1);
 
-        assertThat(roundOverHandler.canHandle(roundOverEvent)).isTrue();
+        assertThat(roundOverHandler.canHandle(roundCompletedEvent)).isTrue();
     }
 
     @DisplayName("canHandle 테스트 - false인 경우")
@@ -25,11 +25,11 @@ class RoundOverHandlerTest {
     void canHandleWhenFalse() {
         RoundOverHandler roundOverHandler = new RoundOverHandler();
 
-        GameOverEvent gameOverEvent = new GameOverEvent(Car.of("car1"));
+        GameFinishedEvent gameFinishedEvent = new GameFinishedEvent(Car.of("car1"));
 
         assertAll(
                 () -> assertThat(roundOverHandler.canHandle("a")).isFalse(),
-                () -> assertThat(roundOverHandler.canHandle(gameOverEvent)).isFalse()
+                () -> assertThat(roundOverHandler.canHandle(gameFinishedEvent)).isFalse()
         );
     }
 }

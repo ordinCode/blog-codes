@@ -13,6 +13,7 @@ public class EventDispatcher {
         List<EventHandler<?>> eventHandlers = handlers.getHandlers();
         for (EventHandler eventHandler : eventHandlers) {
             if (eventHandler.canHandle(event)) {
+//                eventHandler.handle(event);
                 executor.submit(() -> eventHandler.handle(event));
             }
         }

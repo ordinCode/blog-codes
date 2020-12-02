@@ -20,19 +20,19 @@ public class OrdincodeApplication {
         RacingGame racingGame = new RacingGame(players);
 
         car1.move(1);
-        racingGame.doRun(1);
+        racingGame.completeRound(1);
 
         car2.move(2);
-        racingGame.doRun(2);
+        racingGame.completeRound(2);
 
         car3.move(3);
-        racingGame.doRun(3);
+        racingGame.completeRound(3);
 
         car1.move(4);
-        racingGame.doRun(4);
+        racingGame.completeRound(4);
 
         car2.move(5);
-        racingGame.doRun(5);
-        racingGame.over();
+        racingGame.completeRound(5);
+        racingGame.finish();
     }
 }
