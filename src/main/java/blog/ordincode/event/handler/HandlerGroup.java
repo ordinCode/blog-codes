@@ -8,8 +8,8 @@ public class HandlerGroup {
 
     public HandlerGroup() {
         List<EventHandler<?>> eventHandlers = new ArrayList<>();
-        eventHandlers.add(new GameOverHandler());
         eventHandlers.add(new RoundCompletedHandler());
+        eventHandlers.add(new GameFinishedHandler());
         this.eventHandlers = eventHandlers;
     }
 

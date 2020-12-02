@@ -4,7 +4,7 @@ import blog.ordincode.domain.Awards;
 import blog.ordincode.domain.BroadCaster;
 import blog.ordincode.event.events.GameFinishedEvent;
 
-public class GameOverHandler implements EventHandler<GameFinishedEvent> {
+public class GameFinishedHandler implements EventHandler<GameFinishedEvent> {
     private final BroadCaster broadCaster = new BroadCaster();
     private final Awards awards = new Awards();
 
