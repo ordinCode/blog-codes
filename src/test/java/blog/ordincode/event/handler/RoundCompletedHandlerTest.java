@@ -9,27 +9,27 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-class RoundOverHandlerTest {
+class RoundCompletedHandlerTest {
     @DisplayName("canHandle 테스트 - true인 경우")
     @Test
     void canHandleWhenTrue() {
-        RoundOverHandler roundOverHandler = new RoundOverHandler();
+        RoundCompletedHandler roundCompletedHandler = new RoundCompletedHandler();
 
         RoundCompletedEvent roundCompletedEvent = new RoundCompletedEvent(Car.of("car1"), 1);
 
-        assertThat(roundOverHandler.canHandle(roundCompletedEvent)).isTrue();
+        assertThat(roundCompletedHandler.canHandle(roundCompletedEvent)).isTrue();
     }
 
     @DisplayName("canHandle 테스트 - false인 경우")
     @Test
     void canHandleWhenFalse() {
-        RoundOverHandler roundOverHandler = new RoundOverHandler();
+        RoundCompletedHandler roundCompletedHandler = new RoundCompletedHandler();
 
         GameFinishedEvent gameFinishedEvent = new GameFinishedEvent(Car.of("car1"));
 
         assertAll(
-                () -> assertThat(roundOverHandler.canHandle("a")).isFalse(),
-                () -> assertThat(roundOverHandler.canHandle(gameFinishedEvent)).isFalse()
+                () -> assertThat(roundCompletedHandler.canHandle("a")).isFalse(),
+                () -> assertThat(roundCompletedHandler.canHandle(gameFinishedEvent)).isFalse()
         );
     }
 }

@@ -16,7 +16,7 @@ public class RacingGame {
 
     public void completeRound(int round) throws InterruptedException {
         Thread.sleep(1000);
-        System.out.println(round + "라운드 진행완료");
+        System.out.println(round + " 라운드 진행완료");
         EventDispatcher.raise(new RoundCompletedEvent(findFirst(), round));
     }
 

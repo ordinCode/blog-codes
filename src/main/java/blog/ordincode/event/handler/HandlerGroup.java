@@ -9,7 +9,7 @@ public class HandlerGroup {
     public HandlerGroup() {
         List<EventHandler<?>> eventHandlers = new ArrayList<>();
         eventHandlers.add(new GameOverHandler());
-        eventHandlers.add(new RoundOverHandler());
+        eventHandlers.add(new RoundCompletedHandler());
         this.eventHandlers = eventHandlers;
     }
 

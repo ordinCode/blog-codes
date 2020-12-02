@@ -6,8 +6,8 @@ public class RoundCompletedEvent {
     private final Car first;
     private final int round;
 
-    public RoundCompletedEvent(Car player, int round) {
-        this.first = player;
+    public RoundCompletedEvent(Car firstCar, int round) {
+        this.first = firstCar;
         this.round = round;
     }
 

@@ -3,7 +3,7 @@ package blog.ordincode.event.handler;
 import blog.ordincode.domain.BroadCaster;
 import blog.ordincode.event.events.RoundCompletedEvent;
 
-public class RoundOverHandler implements EventHandler<RoundCompletedEvent> {
+public class RoundCompletedHandler implements EventHandler<RoundCompletedEvent> {
     private final BroadCaster broadCaster = new BroadCaster();
 
     @Override
