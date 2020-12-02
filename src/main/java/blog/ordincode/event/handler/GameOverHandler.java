@@ -1,18 +1,18 @@
 package blog.ordincode.event.handler;
 
-import blog.ordincode.event.GameOverEvent;
+import blog.ordincode.event.events.GameOverEvent;
 
 public class GameOverHandler implements EventHandler<GameOverEvent> {
+
     @Override
     public void handle(GameOverEvent event) {
-        System.out.println("게임 종료, 최종우승자는");
-
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println(event.findWinner().getName());
+        System.out.println(
+                String.format("최종 우승자는 %s 입니다", event.getFirst().getName())
+        );
     }
 }

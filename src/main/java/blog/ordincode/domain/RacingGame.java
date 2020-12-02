@@ -1,36 +1,34 @@
 package blog.ordincode.domain;
 
 import blog.ordincode.event.EventDispatcher;
-import blog.ordincode.event.GameOverEvent;
-import blog.ordincode.event.RoundOverEvent;
-import blog.ordincode.event.handler.GameOverHandler;
-import blog.ordincode.event.handler.RoundOverHandler;
+import blog.ordincode.event.events.GameOverEvent;
+import blog.ordincode.event.events.RoundOverEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
     private final List<Car> players;
 
     public RacingGame(List<Car> players) {
-        this.players = players;
+        this.players = new ArrayList<>(players);
     }
 
-    public void doRun(int round) {
-        System.out.println(round + "진행");
-        for (Car car : players) {
-            if (Dice.isRun()) {
-                car.move();
-            }
-        }
-
-        EventDispatcher.handle(new RoundOverHandler());
-        EventDispatcher.raise(new RoundOverEvent(players, round));
-        EventDispatcher.reset();
+    public void doRun(int round) throws InterruptedException {
+        Thread.sleep(1000);
+        System.out.println(round + "라운드 진행완료");
+        EventDispatcher.raise(new RoundOverEvent(findFirst(), round));
     }
 
     public void over() {
-        EventDispatcher.handle(new GameOverHandler());
-        EventDispatcher.raise(new GameOverEvent(players));
-        EventDispatcher.reset();
+        System.out.println("게임종료");
+        EventDispatcher.raise(new GameOverEvent(findFirst()));
+    }
+
+    public Car findFirst() {
+        return players
+                .stream()
+                .reduce((Car::findFirst))
+                .orElseThrow(IllegalArgumentException::new);
     }
 }

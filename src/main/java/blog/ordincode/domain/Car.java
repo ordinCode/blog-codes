@@ -9,16 +9,14 @@ public class Car {
         this.position = position;
     }
 
-    public static Car of(String name, Integer position) {
-        return new Car(name, position);
-    }
-
     public static Car of(String name) {
         return new Car(name, 0);
     }
 
-    public void move() {
-        this.position++;
+    public void move(int count) {
+        for (int i = 0; i < count; i++) {
+            this.position++;
+        }
     }
 
     public Car findFirst(Car car) {
