@@ -1,0 +1,29 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+.nav {
+  border-right: darkgray solid 1px;
+  width: 150px;
+  margin-right: 20px;
+  float: left;
+}
+
+.nav-item {
+  font-size: 20px;
+}
