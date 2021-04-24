@@ -30,10 +30,10 @@ export default {
 
       try {
         const response = await axios.post("/login", data);
-        localStorage.setItem("app_token", response.data.token);
+        localStorage.setItem("app_token", response.data.data.token);
         alert("로그인 되었습니다.");
       } catch (e) {
-        alert(e.message);
+        alert(e.response.data.message);
       }
     },
   },
