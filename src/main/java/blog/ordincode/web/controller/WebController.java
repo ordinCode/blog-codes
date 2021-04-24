@@ -16,18 +16,8 @@ public class WebController implements ErrorController {
         return "/error";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
     @GetMapping("/join")
     public String join() {
         return "join";
-    }
-
-    @GetMapping("/info")
-    public String info() {
-        return "info";
     }
 }

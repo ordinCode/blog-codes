@@ -32,3 +32,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### vue ###
+src/main/resources/dist/
+src/main/resources/templates/index.html

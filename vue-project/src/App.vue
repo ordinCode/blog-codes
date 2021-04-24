@@ -3,8 +3,8 @@
     <h1>점진적으로 프레임워크로 개발하기 - vue</h1>
     <div class="nav">
       <ul>
-        <li><a class="nav-item" href="/">홈</a></li>
-        <li><a class="nav-item" href="/login">로그인</a></li>
+        <li><router-link class="nav-item" to="/">홈</router-link></li>
+        <li><router-link class="nav-item" to="/login">로그인</router-link></li>
         <li><a class="nav-item" href="/join">회원가입</a></li>
       </ul>
     </div>
