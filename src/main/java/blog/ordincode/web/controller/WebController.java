@@ -9,4 +9,19 @@ public class WebController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/join")
+    public String join() {
+        return "join";
+    }
+
+    @GetMapping("/info")
+    public String info() {
+        return "info";
+    }
 }
