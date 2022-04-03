@@ -4,12 +4,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MomService {
-    public void callTheTeacher() {
-        Teacher teacher = findTeacher();
-        System.out.println(teacher.getTeacherPhone());
+    private final SchoolWebsite schoolWebsite;
+
+    public MomService(SchoolWebsite schoolWebsite) {
+        this.schoolWebsite = schoolWebsite;
     }
 
-    private Teacher findTeacher() {
-        return new Teacher("teacherPhone");
+    public void callTheTeacher() {
+        System.out.println(schoolWebsite.findTeacherPhone());
     }
 }
