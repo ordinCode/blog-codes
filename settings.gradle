@@ -1,1 +1,4 @@
 rootProject.name = 'ordincode'
+include 'module-student'
+include 'module-teacher'
+
